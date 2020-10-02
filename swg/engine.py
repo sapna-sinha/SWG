@@ -31,6 +31,7 @@ import SocketServer
 from swg.core.config      import Config
 from swg.core.pageparser  import PageParser
 from swg.entities.page    import Page
+# Create class of progressBar 
 
 class ProgressBar:
     def __init__( self, min_value = 0, max_value = 100, width = 77, char = '#' ):
@@ -42,7 +43,8 @@ class ProgressBar:
         self.width  = width
         self.amount = 0
         self.update_amount(0) 
-  
+        
+  #define the functions
     def increment_amount(self, add_amount = 1):
         new_amount = self.amount + add_amount
         if new_amount < self.min: new_amount = self.min
@@ -69,7 +71,7 @@ class ProgressBar:
   
         percent_str = str(percent_done) + "%"
         self.bar = '[ ' + self.bar + ' ] ' + percent_str
-  
+  #define thr str function
     def __str__(self):
         return str(self.bar)
         
